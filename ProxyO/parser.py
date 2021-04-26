@@ -18,9 +18,9 @@ async def request(url):
             return await resp.json()
 
 
-class ProxyO:
+class ProxyCreator:
 
-    def list_proxy(self, country=None, port=None) -> List[ProxyServer]:
+    def list_proxy(self, country=None, port=None) -> List[dict]:
         list_proxy = ProxyCreator().create_list_proxy()
         list_proxy = [ProxyServer(**proxy) for proxy in list_proxy]
         if type(country) == str:
